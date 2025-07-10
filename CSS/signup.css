@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #faf2d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    padding: 40px;
+    text-align: center;
+}
+
+.signup-container h2 {
+    font-size: 31px;
+    color: #e2ad1a;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-container label {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    color: #e2ad1a;
+}
+
+.signup-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e2ad1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-container button:hover {
+    background-color: #218838;
+}
+
+/* Notification Message */
+.notification {
+    margin-top: 15px;
+    text-align: center;
+    color: red;
+    font-size: 1.2em;
+}
+
+/* "Already have an account" row styling */
+.already-have-account {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.already-have-account span {
+    margin-right: 5px;
+}
+
+.already-have-account a {
+    color: #e2ad1a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.already-have-account a:hover {
+    text-decoration: underline;
+}
+

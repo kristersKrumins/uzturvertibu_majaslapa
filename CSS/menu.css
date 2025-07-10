@@ -1,0 +1,506 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #FDF2CC;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* error mudulis */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+}
+.modal-content h2{
+    text-align: center;
+}
+.modal-content p{
+    margin-top: 1em;
+    text-align: center;
+    color: #5e5e5e;
+}
+.modal-content div{
+    display: flex;
+    justify-content: center;
+}
+.modal-content button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size */
+    margin-top: 10px; /* Some margin on top */
+}
+
+.modal-content button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ----- */
+.Menu-container{
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    width: 90vw;
+    gap: 1em;
+    padding-top: 2em;
+}
+
+.container-newMenu{
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container-newMenu .new-menu-button-container{
+    width: 200px;
+    margin-top: 1em;
+}
+.container-newMenu .new-menu-button-container button{
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.container-newMenu .new-menu-button-container button:hover{
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.container-newMenu .new-menu-button-container button:active{
+    background-color: #222;
+    transform: scale(0.95);
+}
+
+
+/* Iestatījumu kontaineris */
+.menu-edit {
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 30px;
+    max-width: 700px;
+    height: 850px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.menu-edit:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.menu-edit h3 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em;
+    color: #444;
+    font-weight: 600;
+}
+
+.buttons-top {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.buttons-top button {
+    background-color: #444;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.buttons-top button:hover {
+    background-color: #888888; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0px 2px 3px black;
+}
+
+.values-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+.value label{
+    margin-bottom: 5px;
+}
+.values-container label {
+    display: block;
+    text-align: left;
+    margin-right: 10px;
+    font-weight: 600; /* Bold labels */
+    color: #666; /* Darker label color */
+}
+
+.values-container input[type="number"] {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.values-container input[type="number"]:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+.Menu-optimize {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Menu-optimize button {
+    background-color: #444;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.Menu-optimize button:hover {
+    background-color: #888888; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0px 2px 3px black;
+}
+/* Iestatījumu loga beigas==================== */
+
+/* DATU LOGS (rezultāti un sastāvs) */
+.result-container{ /* Pilnais datu konteineris- rezultati un sastavs*/
+    flex: 1 1 auto;
+    height: 850px;
+    padding-left: 1em;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+}
+.result-container:hover{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+.error-msg{
+    text-align: center;
+    margin-bottom: 1em;
+    color: red;
+    font-weight: 600;
+}
+
+.result-title-container h1{
+    margin-bottom: 0.4em;
+    font-size: 2em;
+    color: #444;
+    font-weight: 600;
+}
+
+/* Rezultātu kontaineri grafi-----------------------------------------grafi-------------------------------- */
+.total-price-container{
+    display: flex;
+    padding-left: calc(10px + 1em);
+}
+
+.total-price-container span{
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10px;
+}
+
+
+
+.nutrient-title{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-bottom: 5px;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 500px) {
+    .nutrient-title h2{
+        font-size: 15px;
+    }
+}
+
+.nutrient-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+
+  
+  
+  .calorie-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #a3a3a3; /* Light gray background */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .bar-segment {
+    height: 100%;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    font-weight: bold;
+    color: white;
+    position: relative; /* For positioning labels if needed */
+    float: left; /* or display: inline-block */
+  }
+  
+  .bar-segment:nth-child(1){ /* Consumed */
+      background-color: green;
+  }
+  .bar-segment:nth-child(2){ /* Exceeded */
+      background-color: rgb(117, 103, 103);
+  }
+  .bar-segment:nth-child(3){ /* Needed */
+      background-color: red; /* Orange */
+  
+  }
+/* ------------------------------------------------------------------------------------------------------grafu beigas */
+
+/* PIE CHARTS =========================*/
+.Product-pie-contaier{
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Product-pie-contaier:hover{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+.Product-pie-contaier h1{
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em;
+    color: #444;
+    font-weight: 600;
+}
+.pie-container{
+    width: 90%;
+    max-width: 500px;
+    padding-bottom: 4em;
+}
+
+.Product-pie-contaier h3{
+    color: #666;
+}
+
+#quantity_sum{
+    color: black;
+}
+
+/* PRODUKTU KONTEINERIS -------------=======================================================*/
+.product-container-main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 5em;
+    width: 100%;
+}
+.product-container-main:hover{
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.no-product-msg{
+    margin-top: 1em;
+}
+
+.product-container-main .menu-component-title{
+    width: 100%;
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+}
+.product-container-main .menu-component-title h2{
+    margin-top: 1em;
+    text-align: center;
+}
+.save-btn-container{
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+}
+.save-btn-container button {
+    background-color: #444; /* Dark background */
+    border: none; /* Remove borders */
+    font-family: 'Outfit', sans-serif; /* Change font family */
+    color: white; /* White text */
+    padding: 12px 25px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Get it to display inline-block */
+    font-size: 16px; /* Font size */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer/hand icon */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.save-btn-container button:hover {
+    background-color: #888888; /* Darker background on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0px 2px 3px black; /* Add shadow */
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 500px;
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.01);
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.image-container img {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.product h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+.product-info {
+    margin-bottom: 16px;
+}
+
+.product-info h3 {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+.product-content p {
+    margin: 4px 0;
+}
+
+.amount-edit {
+    margin-bottom: 16px;
+}
+
+.amount-edit h4 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.amount-edit input[type="number"] {
+    width: 90%;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.product-end {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-buttons button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.product-buttons button:hover {
+    background-color: #ff1a1a;
+}
+
+.product-end p {
+    font-size: 1.2em;
+    font-weight: bold;
+}

@@ -1,0 +1,231 @@
+/* Global styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #FDF2CC; /* Background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Profile card container */
+.profile-container {
+    /* This container is relatively positioned,
+       so the back-to-home button (absolutely positioned)
+       will stay within it. */
+    position: relative; 
+    width: 100%;
+    max-width: 900px; /* Constrain to 900px max */
+    margin: 20px auto; /* Center horizontally with some space on top/bottom */
+    padding: 0 10px;   /* Some horizontal padding so content doesn't hit edges */
+}
+
+/* Back button styling */
+.back-to-home {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.back-to-home img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Profile card styling */
+.profile-card {
+    width: 100%; /* Fill the container (which is max 900px) */
+    background-color: #cca53a;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* Profile photo styling */
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #FDF2CC; /* Matches background */
+}
+
+/* Heading in card */
+.profile-card h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+/* Form columns styling */
+.form-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-column {
+    width: 30%;
+}
+
+.profile-info label {
+    display: block;
+    font-size: 0.9em;
+    color: #333;
+    font-weight: bold;
+    margin: 8px 0 4px;
+    text-align: left;
+}
+
+.profile-info input[type="text"],
+.profile-info input[type="email"],
+.profile-info input[type="number"],
+.profile-info select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px gray;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #333;
+    background-color: #FDF2CC;
+}
+
+.profile-info input[readonly] {
+    background-color: #e9e9e9;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Radio group */
+.radio-group {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.radio-group label {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Recommended column heading */
+.recommended-column h3 {
+    font-size: 1.1em;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* Save button styling */
+.save-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FDF2CC;
+    color: #cca53a;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Spacing */
+}
+
+.save-button:hover {
+    background-color: #5bfa33;
+    color: rgb(43, 153, 43);
+    box-shadow: 0px 1px 2px gray;
+}
+
+/* Success banner */
+.success-banner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design (max-width) */
+@media (max-width: 768px) {
+    .form-columns {
+        flex-direction: column;
+    }
+
+    .form-column {
+        width: 100%;
+    }
+
+    .save-button {
+        margin-top: 30px;
+    }
+}
+
+.success-banner {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background-color: #4CAF50; color: white;
+  text-align: center; padding: 10px; z-index: 999;
+}
+#popupOverlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none; 
+  justify-content: center; 
+  align-items: center;
+  z-index: 9999;
+}
+#popupModal {
+  background-color: #cca53a;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px; max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+#popupModal h2 {
+  margin-bottom: 10px; 
+  color: #000;
+}
+#popupModal p {
+  margin-bottom: 20px; 
+  color: #333;
+}
+.popup-buttons button {
+  margin: 0 10px; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 20px;
+  background-color: #FDF2CC; 
+  color: #000;
+  font-weight: 600; 
+  cursor: pointer;
+}
+.popup-buttons button:hover {
+  background-color: #55e75d;
+}
